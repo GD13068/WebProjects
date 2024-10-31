@@ -1,0 +1,101 @@
+## Project List
+
+ - bird-visualizer-danner-riversg-main
+	 - Description in corresponding README
+	 - A project for Web Applications course in 2023
+	 - Solo project
+		 - README and some basic structure written by professor
+	 - Relevant files:
+		 - All .css, .html, and .js files in the src folder
+- blogger-danner-riversg-main
+	- Description in corresponding README
+	- A project for Web Applications course in 2023
+	- Solo project
+		- README and some basic structure written by professor
+	- Relevant files:
+		- All .css, .html, .js, .json, and .mjs files in the src folder and its public subfolder
+- coin-flip-charter-danner-riversg-main
+	- Description in corresponding README
+	- A project for Web Applications course in 2023
+	- Solo project
+		- README and some basic structure written by professor
+	- Relevant files:
+		- All .css, .html, and .js files in the src folder
+- dom-coin-flipper-danner-riversg-main
+	- Description in corresponding README
+	- A project for Web Applications course in 2023
+	- Solo project
+		- README and some basic structure written by professor
+	- Relevant files:
+		- All .css, .html, and .js files in the src folder
+- drawing-app-thisis...
+	- Description in corresponding README
+	- A project for Web Applications course in 2023
+	- Two person group project
+	- Relevant files:
+		- All .css, .html, and .js files in the src folder
+- homeworkManager
+	- Description on resume
+	- Personal project for personal use primarily written in 2022, with an update in 2024
+	- Solo project
+	- Relevant file:
+		- homeworkManager.html
+- mongodb-thisis...
+	- Description in corresponding README
+	- A project for Web Applications course in 2023
+	- Two person group project
+	- Relevant files:
+		- All .json and .mjs files in the src folder
+- node-js-thisis...
+	- Description in corresponding README
+	- A project for Web Applications course in 2023
+	- Two person group project
+	- Relevant files:
+		- All .json files in the main folder and all .mjs files in the src folder
+- react-filter-thisis...
+	- Description in corresponding README
+	- A project for Web Applications course in 2023
+	- Two person group project
+	- Relevant files:
+		- package-lock.json and all .jsx files in the src folder
+- react-menu-filter-danner-riversg-main
+	- Description in corresponding README
+	- A project for Web Applications course in 2023
+	- Solo project
+		- README and some basic structure written by professor
+	- Relevant files:
+		- package-lock.json and all .jsx files in the src folder
+- rmCloser
+	- Description on resume
+	- Personal project for use on the English Wikipedia
+		- First written in 2020, with most recent update in 2024
+	- Solo project
+		- Some minor bug fixes by other users
+	- Relevant file:
+		- main.js
+- stocksDatabase
+	- Description:
+		- Connects to a database with some stock information and performs calculations and updates the database
+	- A project for Databases course in 2024
+	- Solo project
+	- Relevant file:
+		- simulation.java
+- styling-libraries-thisis...
+	- Description in corresponding README
+	- A project for Web Applications course in 2023
+	- Two person group project
+	- Relevant files:
+		- All .css and .html files in the src folder
+- text-file-manager-danner-riversg-main
+	- Description in corresponding README
+	- A project for Web Applications course in 2023
+	- Solo project
+		- README and some basic structure written by professor
+	- Relevant files:
+		- All .json and .mjs files in the src folder and all files in its public subfolder folder
+- tweeter-thisis...
+	- Description in corresponding README
+	- A project for Web Applications course in 2023
+	- Two person group project
+	- Relevant files:
+		- All .css, .html, and .js files in the src folder
