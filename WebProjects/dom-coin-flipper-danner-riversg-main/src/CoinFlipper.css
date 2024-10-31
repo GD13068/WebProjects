@@ -1,0 +1,73 @@
+/*
+ * Class: SWE2511 - Coin Flipper DOM
+ * Name: Gavin Danner-Rivers
+ * Class Section: 121
+*/
+
+#labels {
+    width: 160px;
+    display: inline-block;
+    text-align: right;
+    font-family: fantasy;
+    font-size: 16px;
+}
+
+#inputs {
+    text-align: right;
+    width: auto;
+    display: inline-block;
+}
+
+#errorMessages {
+    display: inline-block;
+    color: red
+}
+
+#submit {
+    width: 100%;
+    background-color: green;
+    color: white;
+}
+
+#form {
+    border-style: double;
+    width: fit-content;
+    padding: 10px;
+}
+
+#histogram {
+    border-style: double;
+    width: fit-content;
+    padding: 10px;
+    display: none;
+}
+
+#numberOfHeads {
+    width: 50px;
+    display: inline-block;
+    text-align: center;
+}
+
+#numberOfOccurrences {
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+}
+
+#progressBars {
+    display: inline-block;
+}
+
+#time {
+    font-size: 10px;
+    display: none;
+}
+
+#progressBars progress {
+    accent-color: maroon;
+}
+
+#histogram label {
+    font-family: fantasy;
+    font-size: 12px;
+}

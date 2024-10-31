@@ -1,0 +1,57 @@
+/*
+ * Class: SWE2511 - Blogger
+ * Name: Gavin Danner-Rivers
+ * Section: 121
+ *
+ * Blogger CSS style definitions
+ */
+#messageInput, #hashtagInput {
+    width: 700px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.inputDiv {
+    width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: right;
+}
+
+.inputPanel, .postsPanel {
+    border-style: double;
+    width: fit-content;
+    padding: 5px;
+    margin: 5px;
+}
+
+.error {
+    color: red;
+}
+
+.post {
+    border-style: solid;
+    padding: 5px;
+    margin: 5px;
+    display: block;
+}
+
+.postHeaderDiv {
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgray;
+    padding: 5px;
+}
+
+.postHashtag {
+    background-color: blue;
+    width: fit-content;
+    color: white;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+#noPostsMessage {
+    display: block;
+}

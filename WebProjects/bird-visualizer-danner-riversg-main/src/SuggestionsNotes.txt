@@ -1,0 +1,3 @@
+Suggestions and/or Notes
+    I enjoyed working with the APIs and figuring out
+    how to get the map to pan to the selected sighting.

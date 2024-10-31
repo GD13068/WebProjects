@@ -1,0 +1,22 @@
+Total: 87/100
+
+5 (5 Points) Submitted files follow submission guidelines
+- Only the requested files were submitted
+- Files are contain name, assignment, section
+- Sources outside of course material are cited
+5 (5 Points) Suggestions
+- List of suggestions for improvement and/or what you enjoyed about this assignment
+3 (10 Points) Code Structure
+- Readable code/file structure
+- Code is well documented
+- Code passes the HTML validator without errors
+- Code passes the CSS validator without errors
+- - CSS Validation errors
+9 (15 Points) Learning the HTML Canvas
+25 (25 Points) The Basic Drawing Application
+25 (25 Points) Adding Features
+15 (15 Points) Documentation
+
+- - Provide code documentation (comments)
+
+- - REGRADE - resubmission of Learning the HTML Canvas for partial credit

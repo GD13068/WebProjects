@@ -1,0 +1,16 @@
+Total: 100/100
+
+5 (5 Points) Correct Submission - Followed submission instructions (e.g. files are updated with name, assignment, section, sources are cited, etc.)
+5 (5 Points) Suggestions - a list of suggestions for improvement and/or what you enjoyed about this assignment
+10 (10 Points) Code Structure
+- Readable code/file structure
+- Code is well documented
+50 (50 Points) Functionality - Correct implementation of required functionality
+- Data is properly displayed in the chart with indexes starting at 1
+- Data is properly displayed in the table
+- All filters correctly update the chart and table
+- When filtered, chart bars have no gaps and entries retain their original index
+- When filtered, entries in the table retain their original index
+30 (30 Points) Styling
+- Chart is styled to something other than the default values
+- DOM elements are styled using a styling library

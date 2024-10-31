@@ -1,0 +1,28 @@
+/*
+ * Class: SWE2511 - MongoDB
+*/
+
+table thead tr th {
+    top: 0;
+    position: sticky;
+}
+
+.height-limit {
+    height: 400px;
+    overflow-y: auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.logo_image {
+    height: 3em;
+    margin: 0.25em;
+}
+
+#errorMessage {
+    background-color: indianred;
+    color: white;
+}

@@ -1,0 +1,3 @@
+Content inside the file
+new line
+1 2 3 4

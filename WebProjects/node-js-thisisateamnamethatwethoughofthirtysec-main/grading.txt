@@ -1,0 +1,24 @@
+Total: 100/100
+
+5 (5 Points) Submitted files follow submission guidelines
+- Only the requested files were submitted
+- Files are contain name, assignment, section
+- Sources outside of course material are cited
+5 (5 Points) Suggestions
+- List of suggestions for improvement and/or what you enjoyed about this assignment
+10 (10 Points) Code Structure
+- Readable code/file structure
+- Code is well documented
+10 (10 Points) Completion of Install Node.js
+10 (10 Points) Completion of Node.js vs BOM
+10 (10 Points) Completion of Parse a URL with Node.js
+15 (15 Points) Completion of Third Party Packages
+15 (15 Points) Completion of Express
+30 (30 Points) Completion of Using Express to Build an API
+- Correct retrieval of the query parameters (a and b)
+- Correct response for valid input
+- Correct response for invalid input
+- Correct response for an invalid operation
+
+- - NOTE: using the express.static middleware simplifies the hosting of static files.
+- - - In your solution, what if you add more files? .... you'd have to add more functions to your server which is tedious

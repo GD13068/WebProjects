@@ -1,0 +1,30 @@
+Total: 100/100
+
+5 (5 Points) Submitted files follow submission guidelines
+- Only the requested files were submitted
+- Files are contain name, assignment, section
+- Sources outside of course material are cited
+5 (5 Points) Suggestions
+- List of suggestions for improvement and/or what you enjoyed about this assignment
+10 (10 Points) Code Structure
+- Readable code/file structure
+- Code is well documented
+30 (30 Points) Blog Server
+- Correct request types, parameters, and input data format
+- Correct server side response format
+- Correct server side error checking of query parameters and routes
+- Error messages returned by the server make sense
+50 (50 Points) Client side - Interface
+- Client code implements the required interface components
+- Required interface correctly performs required behavior
+- Interface and functionality correctly creates a post
+- Interface and functionality correctly deletes a post
+- Posts stored on the server are displayed when page loads
+- Posts display date and time of creation, hashtag, and text
+- Posts are sorted based on date created (most recent first)
+- Correct client side input validation
+- Correct display and clearing of server errors
+- Post Filter:
+- - Filters on hashtag only
+- - Filters using a case-insensitive substring
+- - Filter is not displayed if there are no posts

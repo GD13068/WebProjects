@@ -1,0 +1,46 @@
+<!--
+    Class: SWE2511 - Tweeter
+	Name: Alex Pearsall and Gavin Danner-Rivers
+	Class Section: 121
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Include the Bootstrap library -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- Include the files containing the implementation of this application -->
+    <link type="text/css" rel="stylesheet" href="tweeter.css">
+    <script src="tweeter.js"></script>
+    
+    <title>Tweeter</title>
+</head>
+<body>
+    <h1>Tweeter</h1>
+    <div>
+        <label for="messageInput">What's on your mind?</label>
+        <br>
+        <div id="inputDiv">
+            <input type="text" id="messageInput" class="form-control">
+            <button id="tweetButton" class="btn btn-success">Tweet</button>
+        </div>
+    </div>
+    <br>
+    <table id="tweetTable" class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">Tweet Message</th>
+            <th scope="col" class="fixedWidthColumn">Like👍</th>
+            <th scope="col">Number of Likes</th>
+            <th scope="col" class="fixedWidthColumn">Dislike👎</th>
+            <th scope="col">Number of Dislikes</th>
+        </tr>
+        </thead>
+        <tbody id="tweetTableBody"></tbody>
+    </table>
+    <p id="errormessage"></p>
+</body>
+</html>

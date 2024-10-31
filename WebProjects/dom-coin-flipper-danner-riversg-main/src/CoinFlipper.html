@@ -1,0 +1,43 @@
+<!--
+	Class: SWE2511 - Coin Flipper DOM
+	Name: Gavin Danner-Rivers
+	Class Section: 121
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="CoinFlipper.css">
+	<script src="CoinFlipper.js"></script>
+	<title>Coin Flipper</title>
+</head>
+<body>
+<h1>Coin Flipper</h1>
+<div id="form">
+	<div id="labels">
+		<label id="numCoinsLabel" for="numCoins">Number of coins to flip:</label>
+		<br>
+		<label id="numFlipsLabel" for="numFlips">Number of flips:</label>
+	</div>
+	<div id="inputs">
+		<input type="text" id="numCoins">
+		<br>
+		<input type="text" id="numFlips">
+	</div>
+	<div id="errorMessages">
+		<label id="coinError" for="numCoins"></label>
+		<br>
+		<label id="flipError" for="numFlips"></label>
+	</div>
+	<br>
+	<button id="submit">Run</button>
+</div>
+<br>
+<div id="histogram">
+	<div id="numberOfHeads"></div>
+	<div id="numberOfOccurrences"></div>
+	<div id="progressBars"></div>
+</div>
+<p id="time"></p>
+</body>
+</html>

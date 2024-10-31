@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>homeworkManager</title>
+	
+	<style>
+		button {
+			cursor: pointer;
+		}
+		#mainSpace {
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+		}
+		#windowFrame {
+			display: none;
+			position: fixed;
+			padding-top: 100px;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			background-color: rgba(0,0,0,0.5);
+		}
+		.window {
+			display: none;
+			margin: auto;
+			padding: 20px;
+			width: 50%;
+			border: 1px solid black;
+			background-color: #fefefe;
+			text-align: center;
+		}
+		.closeWindow {
+			float: right;
+		}
+		#classNameInput {
+		
+		}
+		#menuSpace {
+			position: fixed;
+			bottom: 10px;
+			width: 98%;
+		}
+		#addClass {
+		
+		}
+		#addAssignment {
+			display: none;
+		}
+		#currentDateSpan {
+			float: right;
+		}
+		#currentDate {
+			display: inline;
+		}
+		.classBlock {
+			width: 300px;
+			height: 300px;
+			border: 1px solid black;
+			float: left;
+		}
+		.classBlockHeader {
+			width: 295px;
+			height: 60px;
+			border: 2px solid black;
+		}
+		.classBlockOptionsButton {
+			float: right;
+			border: none;
+		}
+		.classBlockTitle {
+			text-align:center;
+		}
+		.assignmentList {
+			line-height: 25px;
+		}
+		.assignmentOptionsDiv {
+			float: right;
+		}
+		.assignmentOptionsButtons {
+			background-color: white;
+			border: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="mainSpace"></div>
+	
+	<div id="windowFrame">
+		<div id="addClassWindow" class="window">
+			<button id="closeAddClassWindow" class="closeWindow">X</button>
+			<h2 id="addClassWindowHeader">Add a class</h2>
+			<label for="classNameInput">Enter the class name:</label>
+			<input type="text" id="classNameInput"/>
+			<hr/>
+			<label for="colorSelection">Select a color:</label>
+			<select id="colorSelection">
+				<option value="FF0000">Red</option>
+				<option value="FFA500">Orange</option>
+				<option value="FFFF00">Yellow</option>
+				<option value="00FF00">Green</option>
+				<option value="0000FF">Blue</option>
+				<option value="800080">Purple</option>
+			</select>
+			<hr/>
+			<button id="submitClass">Submit</button>
+		</div>
+	
+		<div id="addAssignmentWindow" class="window">
+			<button id="closeAddAssignmentWindow" class="closeWindow">X</button>
+			<h2 id="addAssignmentWindowHeader">Add an assignment</h2>
+			<label for="classSelection">Select the class:</label>
+			<select id="classSelection">
+			</select>
+			<hr/>
+			<label for="assignmentNameInput">Enter the assignment name:</label>
+			<input type="text" id="assignmentNameInput"/>
+			<hr/>
+			<label for="dueDateInput">Select the due date:</label>
+			<input type="date" id="dueDateInput"/>
+			<hr/>
+			<label for="alternateDueDateInput">Due date alternatives:</label>
+			<br/>
+			<label for="noDueDate">No due date</label>
+			<input type="radio" id="noDueDate" name="alternateDueDateInput" value="none"/>
+			<br/>
+			<label for="repeatsRegularly">Due every <select id="weekdaySelection"><option value="Monday">Monday</option>
+			<option value="Tuesday">Tuesday</option>
+			<option value="Wednesday">Wednesday</option>
+			<option value="Thursday">Thursday</option>
+			<option value="Friday">Friday</option>
+			<option value="Saturday">Saturday</option>
+			<option value="Sunday">Sunday</option></select></label>
+			<input type="radio" id="repeatsRegularly" name="alternateDueDateInput" value="repeats"/>
+			<hr/>
+			<button id="submitAssignment">Submit</button>
+		</div>
+	</div>
+	
+	<div id="menuSpace">
+		<button id="addClass">Add a class</button>
+		<button id="addAssignment">Add an assignment</button>
+		<span id="currentDateSpan"><p id="currentDate"></p><span> </span><button id="updateCurrentDate">&#8635;</button></span>
+	</div>
+	
+	<script>
+		window.onbeforeunload = function() {
+			return "";
+		}
+	
+		var mainSpace = document.getElementById("mainSpace");
+		var windowFrame = document.getElementById("windowFrame");
+		var addClassWindow = document.getElementById("addClassWindow");
+		var closeAddClassWindowButton = document.getElementById("closeAddClassWindow");
+		var classNameInput = document.getElementById("classNameInput");
+		var colorSelection = document.getElementById("colorSelection");
+		var submitClassButton = document.getElementById("submitClass");
+		var addAssignmentWindow = document.getElementById("addAssignmentWindow");
+		var closeAddAssignmentWindowButton = document.getElementById("closeAddAssignmentWindow");
+		var classSelection = document.getElementById("classSelection");
+		var assignmentNameInput = document.getElementById("assignmentNameInput");
+		var dueDateInput = document.getElementById("dueDateInput");
+		var alternateDueDateInput = document.getElementsByName("alternateDueDateInput");
+		var noDueDate = document.getElementById("noDueDate");
+		var weekdaySelection = document.getElementById("weekdaySelection");
+		var repeatsRegularly = document.getElementById("repeatsRegularly");
+		var submitAssignmentButton = document.getElementById("submitAssignment");
+		var addClassButton = document.getElementById("addClass");
+		var addAssignmentButton = document.getElementById("addAssignment");
+		var currentDateText = document.getElementById("currentDate");
+		var updateCurrentDateButton = document.getElementById("updateCurrentDate");
+		
+		var classNumberCounter = 0;
+		var assignmentNumberCounter = 0;
+		
+		var mondayAssignments = [];
+		var tuesdayAssignments = [];
+		var wednesdayAssignments = [];
+		var thursdayAssignments = [];
+		var fridayAssignments = [];
+		var saturdayAssignments = [];
+		var sundayAssignments = [];
+
+		var data = [];
+		
+		var getNext = function(weekday) {
+			var today = new Date();
+			
+			var currentWeekday = today.getDay();
+			var newWeekday = weekday - currentWeekday;
+			if (newWeekday == 0) {
+				newWeekday = 7;
+			} else if (newWeekday < 0) {
+				newWeekday += 7;
+			}
+			today.setDate(today.getDate()+newWeekday);
+			
+			var todayFormatted = today.toLocaleDateString();
+			
+			return todayFormatted;
+		}
+		
+		var updateDate = function() {
+			var today = new Date();
+			
+			var todayFormatted = today.toLocaleDateString();
+			currentDateText.innerHTML = todayFormatted;
+			
+			var currentWeekday = today.getDay();
+			var currentDayArray;
+			
+			if (currentWeekday == 0) {
+				currentDayArray = sundayAssignments;
+				currentWeekday = 7;
+			} else if (currentWeekday == 1) {
+				currentDayArray = mondayAssignments;
+			} else if (currentWeekday == 2) {
+				currentDayArray = tuesdayAssignments;
+			} else if (currentWeekday == 3) {
+				currentDayArray = wednesdayAssignments;
+			} else if (currentWeekday == 4) {
+				currentDayArray = thursdayAssignments;
+			} else if (currentWeekday == 5) {
+				currentDayArray = fridayAssignments;
+			} else if (currentWeekday == 6) {
+				currentDayArray = saturdayAssignments;
+			}
+			
+			for (var i=0; i<currentDayArray.length; i++) {
+				document.getElementById(currentDayArray[i]).style.display = "list-item";
+				document.getElementById(currentDayArray[i] + "Date").innerHTML = "(" + getNext(currentWeekday-1) + ")";
+			}
+		}
+		
+		updateDate();
+		
+		var addClass = function(name, backgroundColor, textColor) {
+			var newClassOption = document.createElement("option");
+			newClassOption.text = name;
+			newClassOption.value = name;
+			classSelection.add(newClassOption);
+			
+			classNumberCounter++;
+			
+			var newClassBlock = document.createElement("div");
+			newClassBlock.id = "classBlock" + classNumberCounter;
+			newClassBlock.className = "classBlock";
+			
+			var newClassBlockHeader = document.createElement("div");
+			newClassBlockHeader.className = "classBlockHeader";
+			newClassBlockHeader.style.backgroundColor = backgroundColor;
+			
+			var newClassBlockOptionsButton = document.createElement("button");
+			newClassBlockOptionsButton.className = "classBlockOptionsButton";
+			newClassBlockOptionsButton.style.backgroundColor = backgroundColor;
+			newClassBlockOptionsButton.style.color = textColor;
+			newClassBlockOptionsButton.setAttribute("onclick", "classOptions(" + classNumberCounter + ");");
+			newClassBlockOptionsButton.innerHTML = "&#8942;"
+			
+			var newClassBlockTitle = document.createElement("h3");
+			newClassBlockTitle.id = "class" + classNumberCounter + "Name";
+			newClassBlockTitle.className = "classBlockTitle";
+			newClassBlockTitle.style.color = textColor;
+			newClassBlockTitle.innerHTML = name;
+			
+			newClassBlockHeader.appendChild(newClassBlockOptionsButton);
+			newClassBlockHeader.appendChild(newClassBlockTitle);
+			
+			var newAssignmentListDiv = document.createElement("div");
+			
+			var newAssignmentList = document.createElement("ul");
+			newAssignmentList.id = name + "AssignmentList";
+			newAssignmentList.className = "assignmentList";
+			newAssignmentList.dataset.classNumber = classNumberCounter;
+			
+			newAssignmentListDiv.appendChild(newAssignmentList);
+			
+			newClassBlock.appendChild(newClassBlockHeader);
+			newClassBlock.appendChild(newAssignmentListDiv);
+			
+			mainSpace.appendChild(newClassBlock);
+		}
+		
+		var addAssignment = function(className, assignmentName, dueDate) {
+			var assignmentList = document.getElementById(className + "AssignmentList");
+			var classNumber = assignmentList.dataset.classNumber;
+
+			assignmentNumberCounter++;
+			var repeats = false;
+			
+			if (dueDate == "Monday") {
+				tuesdayAssignments.push("assignment" + classNumber + "-" + assignmentNumberCounter);
+				dueDate = getNext(1);
+				repeats = true;
+			} else if (dueDate == "Tuesday") {
+				wednesdayAssignments.push("assignment" + classNumber + "-" + assignmentNumberCounter);
+				dueDate = getNext(2);
+				repeats = true;
+			} else if (dueDate == "Wednesday") {
+				thursdayAssignments.push("assignment" + classNumber + "-" + assignmentNumberCounter);
+				dueDate = getNext(3);
+				repeats = true;
+			} else if (dueDate == "Thursday") {
+				fridayAssignments.push("assignment" + classNumber + "-" + assignmentNumberCounter);
+				dueDate = getNext(4);
+				repeats = true;
+			} else if (dueDate == "Friday") {
+				saturdayAssignments.push("assignment" + classNumber + "-" + assignmentNumberCounter);
+				dueDate = getNext(5);
+				repeats = true;
+			} else if (dueDate == "Saturday") {
+				sundayAssignments.push("assignment" + classNumber + "-" + assignmentNumberCounter);
+				dueDate = getNext(6);
+				repeats = true;
+			} else if (dueDate == "Sunday") {
+				mondayAssignments.push("assignment" + classNumber + "-" + assignmentNumberCounter);
+				dueDate = getNext(7);
+				repeats = true;
+			}
+			
+			var newAssignment = document.createElement("li");
+			newAssignment.id = "assignment" + classNumber + "-" + assignmentNumberCounter;
+			
+			var newAssignmentName = document.createElement("span");
+			newAssignmentName.id = "assignment" + classNumber + "-" + assignmentNumberCounter + "Name";
+			newAssignmentName.innerHTML = assignmentName;
+			
+			var newAssignmentSpace = document.createElement("span");
+			newAssignmentSpace.innerHTML = " ";
+			
+			var newAssignmentDate = document.createElement("span");
+			newAssignmentDate.id = "assignment" + classNumber + "-" + assignmentNumberCounter + "Date";
+			newAssignmentDate.innerHTML = "(" + dueDate + ")";
+			
+			var newAssignmentOptionsDiv = document.createElement("div");
+			newAssignmentOptionsDiv.className = "assignmentOptionsDiv";
+			
+			var newAssignmentCompleteButton = document.createElement("button");
+			newAssignmentCompleteButton.className = "assignmentOptionsButtons";
+			if (repeats) {
+				newAssignmentCompleteButton.setAttribute("onclick", "repeatingAssignmentCompleted(" + classNumber + "," + assignmentNumberCounter + ");");
+			} else {
+				newAssignmentCompleteButton.setAttribute("onclick", "assignmentCompleted(" + classNumber + "," + assignmentNumberCounter + ");");
+			}
+			newAssignmentCompleteButton.innerHTML = "&#10003;";
+			
+			var newAssignmentOptionsButton = document.createElement("button");
+			newAssignmentOptionsButton.className = "assignmentOptionsButtons";
+			newAssignmentOptionsButton.setAttribute("onclick", "assignmentOptions(" + classNumber + "," + assignmentNumberCounter + ");");
+			newAssignmentOptionsButton.innerHTML = "&#8942;";
+			
+			newAssignmentOptionsDiv.appendChild(newAssignmentCompleteButton);
+			newAssignmentOptionsDiv.appendChild(newAssignmentOptionsButton);
+			
+			newAssignment.appendChild(newAssignmentName);
+			newAssignment.appendChild(newAssignmentSpace);
+			newAssignment.appendChild(newAssignmentDate);
+			newAssignment.appendChild(newAssignmentOptionsDiv);
+			
+			assignmentList.appendChild(newAssignment);
+		}
+		
+		var classOptions = function(classNumber) {
+			//Display new window with options to change color, name, and delete class
+		}
+		
+		var assignmentCompleted = function(classNumber, assignmentNumber) {
+			if (confirm("Are you sure you want to remove this assignment?")) {
+				data = data.filter(entry => !(entry.type=="A" && entry.name==document.getElementById("assignment" + classNumber + "-" + assignmentNumber + "Name").innerText));
+				localStorage.setItem("data", JSON.stringify(data));
+				document.getElementById("assignment" + classNumber + "-" + assignmentNumber).remove();
+			}
+		}
+		
+		var repeatingAssignmentCompleted = function(classNumber, assignmentNumber) {
+			if (confirm("Are you sure you want to remove this assignment?")) {
+				document.getElementById("assignment" + classNumber + "-" + assignmentNumber).style.display = "none";
+			}
+		}
+		
+		var assignmentOptions = function(classNumber, assignmentNumber) {
+			//Display new window with options to change name, due date, and delete assignment
+		}
+		
+		addClassButton.onclick = function() {
+			windowFrame.style.display = "block";
+			addClassWindow.style.display = "block";
+			
+			classNameInput.focus();
+		}
+		
+		addAssignmentButton.onclick = function() {
+			windowFrame.style.display = "block";
+			addAssignmentWindow.style.display = "block";
+			
+			classSelection.focus();
+		}
+		
+		closeAddClassWindowButton.onclick = function() {
+			windowFrame.style.display = "none";
+			addClassWindow.style.display = "none";
+		}
+		
+		closeAddAssignmentWindowButton.onclick = function() {
+			windowFrame.style.display = "none";
+			addAssignmentWindow.style.display = "none";
+		}
+		
+		window.onclick = function(event) {
+			if (event.target == windowFrame) {
+				windowFrame.style.display = "none";
+				addClassWindow.style.display = "none";
+				addAssignmentWindow.style.display = "none";
+			}
+		}
+		
+		submitClassButton.onclick = function() {
+			updateDate();
+			var classNameEntered = classNameInput.value;
+			var colorSelected = colorSelection.value;
+			
+			var red = parseInt(colorSelected[0] + colorSelected[1], 16);
+			var green = parseInt(colorSelected[2] + colorSelected[3], 16);
+			var blue = parseInt(colorSelected[4] + colorSelected[4], 16);
+			colorSelected = "rgb(" + red + "," + green + "," + blue + ")";
+			
+			var colorBrightness = Math.round(((parseInt(red) * 299) + (parseInt(green) * 587) + (parseInt(blue) * 114)) / 1000);
+			var textColor;
+			if (colorBrightness > 125) {
+				textColor = "black";
+			} else {
+				textColor = "white";
+			}
+			
+			if (classNameEntered == "") {
+				alert("Please enter a class name.");
+			} else {
+				windowFrame.style.display = "none";
+				addClassWindow.style.display = "none";
+				addAssignmentButton.style.display = "inline";
+			
+				classNameInput.value = "";
+				colorSelection.selectedIndex = 0;
+			
+				addClass(classNameEntered, colorSelected, textColor);
+
+				const classObject = {
+					type: "C",
+					name: classNameEntered,
+					color: colorSelected,
+					textColor: textColor
+				};
+
+				data.push(classObject);
+
+				localStorage.setItem("data", JSON.stringify(data));
+			}
+		}
+		
+		submitAssignmentButton.onclick = function() {
+			updateDate();
+			var classSelected = classSelection.value;
+			var assignmentNameEntered = assignmentNameInput.value;
+			var dueDateEntered = dueDateInput.value;
+			var noDueDateChosen = noDueDate.checked;
+			var weekdaySelected = weekdaySelection.value;
+			var repeatsRegularlyChosen = repeatsRegularly.checked;
+			
+			if (assignmentNameEntered == "") {
+				alert("Please enter an assignment name.");
+			} else if (dueDateEntered == "" && noDueDateChosen == false && repeatsRegularlyChosen == false) {
+				alert("Please enter select a due date.");
+			} else {
+				if (dueDateEntered == "") {
+					if (noDueDateChosen) {
+						dueDateEntered = "No due date";
+					} else {
+						dueDateEntered = weekdaySelected;
+					}
+				} else {
+					dueDateEntered = new Date(dueDateEntered + "T00:00:00").toLocaleDateString();
+				}
+				windowFrame.style.display = "none";
+				addAssignmentWindow.style.display = "none";
+				
+				classSelection.selectedIndex = 0;
+				assignmentNameInput.value = "";
+				dueDateInput.value = "";
+				noDueDate.checked = false;
+				repeatsRegularly.checked = false;
+				weekdaySelection.selectedIndex = 0;
+				
+				addAssignment(classSelected, assignmentNameEntered, dueDateEntered);
+
+				const assignmentObject = {
+					type: "A",
+					className: classSelected,
+					name: assignmentNameEntered,
+					dueDate: dueDateEntered
+				};
+
+				data.push(assignmentObject);
+
+				localStorage.setItem("data", JSON.stringify(data));
+			}
+		}
+		
+		updateCurrentDateButton.onclick = function() {
+			updateDate();
+		}
+
+		if (localStorage.getItem("data") != null) {
+			let existingData = JSON.parse(localStorage.getItem("data"));
+			for (let i=0; i<existingData.length; i++) {
+				const entry = existingData[i];
+				const type = entry.type;
+				data.push(entry);
+
+				if (type == "C") {
+					addClass(entry.name, entry.color, entry.textColor);
+					addAssignmentButton.style.display = "inline";
+				} else if (type == "A") {
+					addAssignment(entry.className, entry.name, entry.dueDate);
+				}
+			}
+		} else {
+			localStorage.setItem("data", JSON.stringify(data));
+		}
+	</script>
+</body>
+</html>

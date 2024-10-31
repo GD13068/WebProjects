@@ -1,0 +1,29 @@
+Total: 100/100
+
+5 (5 Points) Submitted files follow submission guidelines
+- Only the requested files were submitted
+- Files are contain name, assignment, section
+- Sources outside of course material are cited
+5 (5 Points) Suggestions
+- List of suggestions for improvement and/or what you enjoyed about this assignment
+10 (10 Points) Code Structure
+- Readable code/file structure
+- Code is well documented
+- Code passes the HTML validator without errors
+- Code passes the CSS validator without errors
+65 (65 Points) Functionality - Correct implementation of required functionality
+- Bird data is displayed on the map for location at the map center
+- Bird sighting locations are correctly displayed in the map with markers
+- Bird sighting markers have the correct popup values
+- Data is properly displayed in the table
+- Table is correctly labeled
+- Table data is correctly displayed
+- Map correctly pans to the bird sighting location when the user clicks on a table row
+15 (15 Points) Error Checking
+- Errors are correctly handled and displayed to the user
+- Error message is displayed not using window.alert
+- Map is cleared of all markers when an error occurs
+- Table is cleared of all data when an error occurs
+- Error message is removed when there is no longer an error
+
+- - You can reduce the number of queries to the eBird API by using the moveend rather than the move map event, but what you did works.

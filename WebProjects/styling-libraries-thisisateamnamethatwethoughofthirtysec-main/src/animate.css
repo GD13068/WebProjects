@@ -1,0 +1,59 @@
+/*
+Class: SWE2511 - Bootstrap Forms
+                 Names: Alexander Pearsall and Gavin Danner-Rivers
+                 Class Section: 121
+*/
+h2 {
+    animation-name: moving;
+    animation-duration: 4s;
+}
+
+@keyframes moving {
+    0% {transform: translateX(200px)}
+    50% {transform: translateX(-200px)}
+    100% {transform: translateX(0px)}
+}
+
+h1 {
+    text-align: center;
+    margin: 100px;
+    color: green;
+    animation-duration: 2s;
+}
+
+.box {
+    background-color: #15156c;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.box:hover {
+    animation-name: rotate;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+div {
+    animation: glow 1s infinite alternate;
+    position: absolute;
+    left: 30%;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px -10px #620000;
+    }
+    to {
+        box-shadow: 0 0 10px 10px #ff0000;
+    }
+}

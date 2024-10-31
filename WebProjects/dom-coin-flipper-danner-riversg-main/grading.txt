@@ -1,0 +1,23 @@
+Total: 95/100
+
+5 (5 Points) Correct Submission - Followed submission instructions (e.g. files are updated with name, assignment, section, sources are cited, etc.)
+5 (5 Points) Suggestions - a list of suggestions for improvement and/or what you enjoyed about this assignment
+5 (10 Points) Code Structure
+- Readable code/file structure
+- Code is well documented
+- Code passes the HTML validator without errors
+- Code passes the CSS validator without errors
+- - CSS Validation errors
+40 (40 Points) Functionality - Correct implementation of required functionality
+- Histogram is displayed using DOM elements
+- Only a single histogram is shown - with repeated runs the old histogram is removed
+- Histogram bars are normalized so the longest occurrence use 100% of the bar
+- Histogram bars take up the majority of the page width
+20 (20 Points) Error Checking
+- Comprehensive error checking for "bad" input (0, negative, or alphabetic input values must not be allowed)
+- Number of coins must be between 1 and 10 inclusive
+- Number of flips must be between 1 and 1000000 inclusive
+- Error message is displayed not using window.alert
+- Error message is only displayed when there is invalid user input
+- Histogram is removed when an error message is displayed
+20 (20 Points) Styling - Web page contains custom styling

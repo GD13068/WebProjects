@@ -1,0 +1,37 @@
+/*
+    Class: SWE2511 - Tweeter
+    Name: Alex Pearsall and Gavin Danner-Rivers
+    Class Section: 121
+*/
+
+body {
+    background-color: lightgray;
+    margin: 20px;
+}
+
+#errormessage {
+    color: red;
+    visibility: hidden;
+}
+
+#tweetTable th {
+    background-color: black;
+    color: white;
+    font-family: cursive;
+}
+
+#messageInput {
+    width: 200px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#inputDiv {
+    display: flex;
+    align-items: center;
+}
+
+.fixedWidthColumn {
+    width: 0.1%;
+    white-space: nowrap;
+}

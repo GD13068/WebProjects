@@ -1,0 +1,57 @@
+<!--
+	Class: SWE2511 - Drawing
+	Names: Alex Pearsall & Gavin Danner-Rivers
+	Class Section: 121
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drawing Application</title>
+
+    <!-- Import CSS and JavaScript !-->
+    <link rel="stylesheet" href="drawing.css">
+    <script src="drawing.js"></script>
+</head>
+<body>
+<canvas id="my_canvas" height="800" width="800"></canvas>
+<p id="location">X-Location: N/A || Y-Location: N/A</p>
+<div id="customizationPanel">
+    <div id="customizationRowOne" class="customization">
+        <div class="option">
+            <label for="penSize">Pen Size: </label>
+            <input type="range" id="penSize" min="1" max="20" value="5">
+        </div>
+        <div class="option">
+            <label for="penColor">Pen Color: </label>
+            <input type="color" id="penColor" value="#000000">
+        </div>
+        <div id="shapeSelection" class="option">
+            <p>Pen Shape:</p>
+            <div>
+                <input type="radio" id="square" name="shape" value="square" checked>
+                <label class="shapeLabel" for="square">Square</label>
+                <br>
+                <input type="radio" id="circle" name="shape" value="circle">
+                <label class="shapeLabel" for="circle">Circle</label>
+            </div>
+        </div>
+        <button id="clear">Clear Canvas</button>
+    </div>
+    <br>
+    <div id="customizationRowTwo" class="customization">
+        <div class="option textInput">
+            <label for="width">Canvas Width: </label>
+            <span id="widthError" class="errorMessage">Invalid width</span>
+            <input type="text" id="width" value="800">
+        </div>
+        <div class="option textInput">
+            <label for="height">Canvas Height: </label>
+            <span id="heightError" class="errorMessage">Invalid height</span>
+            <input type="text" id="height" value="800">
+        </div>
+        <button id="resetOptions">Reset Options to Defaults</button>
+    </div>
+</div>
+</body>
+</html>

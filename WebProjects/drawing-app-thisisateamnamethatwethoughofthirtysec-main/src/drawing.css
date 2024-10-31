@@ -1,0 +1,75 @@
+/*
+ * Class: SWE2511 - Drawing
+ * Names: Alex Pearsall & Gavin Danner-Rivers
+ * Class 121
+*/
+
+canvas {
+    border: 1px solid;
+}
+
+.customization {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    font-family: fantasy;
+    font-size: 15px;
+}
+
+.option {
+    border-style: double;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+#customizationPanel {
+    border-style: dashed;
+    width: 800px;
+    padding: 5px;
+}
+
+#shapeSelection {
+    display: flex;
+    align-items: center;
+}
+
+.shapeLabel {
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+label {
+    padding-right: 5px;
+}
+
+button {
+    background-color: black;
+    color: white;
+}
+
+.textInput {
+    position: relative;
+    display: inline-block;
+}
+
+.errorMessage {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    top: 23%;
+    left: 65%;
+    background-color: darkred;
+    color: white;
+    font-family: sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+#penSize {
+    accent-color: green;
+}
+
+#square, #circle {
+    accent-color: green;
+}

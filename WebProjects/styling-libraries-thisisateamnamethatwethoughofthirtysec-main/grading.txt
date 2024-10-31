@@ -1,0 +1,20 @@
+Total: 97/100
+
+5 (5 Points) Submitted files follow submission guidelines
+- Only the requested files were submitted
+- Files are contain name, assignment, section
+- Sources outside of course material are cited
+5 (5 Points) Suggestions
+- List of suggestions for improvement and/or what you enjoyed about this assignment
+10 (10 Points) Code Structure
+- Readable code/file structure
+- Code is well documented
+- Code passes the HTML validator without errors
+- Code passes the CSS validator without errors
+15 (15 Points) Content Delivery Networks Exercise
+15 (15 Points) BootStrap W3Schools Exercises
+27 (30 Points) BootStrap Forms Exercises
+- Forms are properly formatted
+- Validation of form data is correct
+- - input elements should have corresponding labels
+20 (20 Points) Other Styling Libraries Exercise

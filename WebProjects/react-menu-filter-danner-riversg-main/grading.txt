@@ -1,0 +1,27 @@
+Total: 100/100
+
+5 (5 Points) Submitted files follow submission guidelines
+- Only the requested files were submitted
+- Files are contain name, assignment, section
+- Sources outside of course material are cited
+5 (5 Points) Suggestions
+- List of suggestions for improvement and/or what you enjoyed about this assignment
+10 (10 Points) Code Structure
+- Readable code/file structure
+- Code is well documented
+20 (20 Points) React Components
+- Implementation of required React Components
+- Components are implemented in JSX
+- Components use props and state appropriately - no global variables
+15 (15 Points) Functionality - Search
+- Search functionality behaves correctly:
+- Case-insensitive substring search
+15 (15 Points) Functionality - Type Select
+- Behavior of the select by type drop down
+- Correctly filters the menu
+15 (15 Points) Functionality - Allergen Filter
+- Switches/Checkboxes for filtering by allergens works correctly
+15 (15 Points) Update Behavior and Formatting
+- Menu items are updated in real-time as modifications are made to the menu filters.
+- Use of a grid and cards for items in the menu
+- All other DOM elements are formatted using custom formatting or a formatting library.

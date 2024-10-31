@@ -1,0 +1,16 @@
+Total: 95/100
+
+5 (5 Points) Submitted files follow submission guidelines
+- Only the requested files were submitted
+- Files are contain name, assignment, section
+- Sources outside of course material are cited
+5 (5 Points) Suggestions
+- List of suggestions for improvement and/or what you enjoyed about this assignment
+10 (10 Points) Code Structure
+- Readable code/file structure
+- Code is well documented
+20 (20 Points) Completion of The Discography Client Interface
+20 (20 Points) Completion of The Discography Client Code
+10 (10 Points) Completion of The Discography Server Code
+25 (30 Points) Completion of Error Handling and Security
+- - Be more specific, include exact strings that would need to be used to create a malicious album

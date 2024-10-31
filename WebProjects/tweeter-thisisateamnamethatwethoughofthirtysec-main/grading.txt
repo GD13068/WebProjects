@@ -1,0 +1,34 @@
+Total: 92/100
+
+5 (5 Points) Submitted files follow submission guidelines
+- Only the requested files were submitted
+- Files are contain name, assignment, section
+- Sources outside of course material are cited
+5 (5 Points) Suggestions
+- List of suggestions for improvement and/or what you enjoyed about this assignment
+7 (10 Points) Code Structure
+- Readable code/file structure
+- Code is well documented
+- - Provide code comments to document your code
+- Code passes the HTML validator without errors
+- Code passes the CSS validator without errors
+5 (10 Points) Security Research
+10 (10 Points) Local Storage Research
+10 (10 Points) "Tweet" Functionality
+- Message with buttons are correctly added to the table
+- "Likes" and "Dislikes" are correctly initialized
+10 (10 Points) "Like" and "Dislike" Functionality
+- Values for "likes" and "dislikes" are incremented when the corresponding button is clicked
+- Values for "likes" and "dislikes" are set only for the corresponding message
+10 (10 Points) Correct validation of user input
+- Message text must be a string of length > 0 and length < 26 characters
+- Correct behavior of the "empty input" error message
+5 (5 Points) Formatting
+- Correct formatting as described
+10 (10 Points) Script Injection
+- Correct prevention of script injection attacks
+15 (15 Points) Local Storage
+- Messages, "likes", and "dislikes" are stored in local storage and successfully restored when the page is refreshed
+- The "like" and "dislike" buttons function correctly after restoring from local storage
+
+- - Attack vectors - you describe generic attacks, be more specific to injecting JavaScript

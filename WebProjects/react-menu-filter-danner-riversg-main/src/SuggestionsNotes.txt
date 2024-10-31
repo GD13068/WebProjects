@@ -1,0 +1,3 @@
+I enjoyed familiarizing myself more with React and figuring out the best
+way to implement the requirements with as little hard-coding of allergens and
+types as possible.

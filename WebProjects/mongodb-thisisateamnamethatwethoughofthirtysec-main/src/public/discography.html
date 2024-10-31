@@ -1,0 +1,60 @@
+<!--
+    Class: SWE2511 - MongoDB
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discography</title>
+
+    <!-- Include the latest version of Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="discography.js"></script>
+    <link rel="stylesheet" href="discography.css">
+</head>
+<body class="m-3">
+    <div class="header"><img class="logo_image" src="msoe.png" alt="MSOE"/><h1>Prof. Jones Discography</h1></div>
+    <div id="inputChoice" class="my-3 row align-items-end">
+        <div class="col-auto">
+            <label for="inputType">Input:</label>
+            <select class="form-select" id="inputType">
+                <option value="browse">Browse</option>
+                <option value="addAlbum">Add Album</option>
+                <option value="search">Search</option>
+            </select>
+        </div>
+        <div id="add" class="row-auto visually-hidden">
+            <label for="album">Album</label>
+            <input type="text" class="form-control" id="album">
+            <label for="artist">Artist</label>
+            <input type="text" class="form-control" id="artist">
+            <label for="year">Year</label>
+            <input type="number" class="form-control" id="year">
+            <button id="addButton" class="btn btn-primary my-3">Add Album</button>
+        </div>
+        <div id="search" class="col-auto visually-hidden">
+            <label for="searchType">Search by:</label>
+            <select class="form-select" id="searchType">
+                <option value="title">By Title</option>
+                <option value="artist">By Artist</option>
+                <option value="year">By Year</option>
+            </select>
+        </div>
+        <div id="filter" class="row-auto visually-hidden">
+            <label for="filterTerm">Search Term:</label>
+            <input type="text" class="form-control" id="filterTerm">
+            <button id="filterButton" class="btn btn-primary my-3">Search</button>
+        </div>
+    </div>
+    <div id="errorMessage" class="m-3 w-25 p-3 visually-hidden">Error Space</div>
+    <div class="table-responsive height-limit">
+    <table id="table" class="table table-striped table-hover">
+        <thead class="table table-dark"><tr><th>Album</th><th>Artist</th><th>Year</th></tr></thead>
+        <tbody id="tbody"></tbody>
+    </table>
+    </div>
+</body>
+</html>

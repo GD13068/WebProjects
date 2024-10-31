@@ -1,0 +1,2 @@
+I enjoyed the whole project. Specifically, I enjoyed combining a database,
+server, and client to make a web application.

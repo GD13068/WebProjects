@@ -1,0 +1,15 @@
+{
+  "name": "textfileserver",
+  "version": "1.0.0",
+  "description": "Text File Manager Server",
+  "main": "TextFileServer.mjs",
+  "type": "module",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

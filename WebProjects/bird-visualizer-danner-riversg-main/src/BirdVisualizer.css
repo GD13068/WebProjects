@@ -1,0 +1,23 @@
+/*
+ * Class: SWE2511 - eBird Visualizer
+ * Name: Gavin Danner-Rivers
+ * Class Section: 121
+*/
+
+.map {
+    height: 700px;
+    width: 1000px;
+}
+
+#errorDisplay {
+    margin-top: 5px;
+    width: 1000px;
+}
+
+/* Table styling */
+table {
+    width: 1000px !important;
+}
+tbody tr {
+    cursor: pointer;
+}

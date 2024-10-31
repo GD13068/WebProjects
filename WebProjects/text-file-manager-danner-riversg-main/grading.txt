@@ -1,0 +1,21 @@
+Total: 100/100
+
+5 (5 Points) Submitted files follow submission guidelines
+- Only the requested files were submitted
+- Files are contain name, assignment, section
+- Sources outside of course material are cited
+5 (5 Points) Suggestions
+- List of suggestions for improvement and/or what you enjoyed about this assignment
+10 (10 Points) Code Structure
+- Readable code/file structure
+- Code is well documented
+40 (40 Points) Server API
+- Implementation of server endpoints
+- Correct handling of request parameters
+- Correct response format for success
+- Correct response format for errors
+40 (40 Points) Client API
+- Implementation of client functions that invoke server endpoints
+- Correct handling of parameters
+- Correct return value for success
+- Correctly throw errors
